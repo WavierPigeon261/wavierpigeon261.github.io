@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sourabh | Developer Portfolio</title>
+    <style>
+        :root {
+            --bg-color: #0d1117;
+            --card-bg: #161b22;
+            --text-main: #c9d1d9;
+            --text-muted: #8b949e;
+            --accent: #58a6ff;
+            --border-color: #30363d;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            max-width: 800px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .repo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .repo-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            text-decoration: none;
+            color: var(--text-main);
+            transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .repo-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+        }
+
+        .repo-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin: 0 0 10px 0;
+        }
+
+        .repo-desc {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+            margin: 0 0 20px 0;
+            flex-grow: 1;
+        }
+
+        .repo-meta {
+            display: flex;
+            align-items: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .lang-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+
+        .lang-python { background-color: #3572A5; }
+        .lang-html { background-color: #e34c26; }
+        .lang-js { background-color: #f1e05a; }
+
+        footer {
+            margin-top: auto;
+            padding: 40px 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Sourabh</h1>
+        <p>Developer & Security Enthusiast | Showcasing my projects and tools</p>
+    </header>
+
+    <div class="container">
+        <div class="repo-grid">
+
+            <!-- REPOSITORY BOX 1 -->
+            <a href="https://github.com/WavierPigeon261/spectre-search" target="_blank" class="repo-card">
+                <div>
+                    <h3 class="repo-title">spectre-search</h3>
+                    <p class="repo-desc">A privacy-focused search aggregation and synthesis engine utilizing low-latency AI inference models.</p>
+                </div>
+                <div class="repo-meta">
+                    <span class="lang-dot lang-python"></span>
+                    <span>Python</span>
+                </div>
+            </a>
+
+            <!-- REPOSITORY BOX 2 -->
+            <a href="https://github.com/WavierPigeon261/YOUR-REPOS-NAME" target="_blank" class="repo-card">
+                <div>
+                    <h3 class="repo-title">Project Two</h3>
+                    <p class="repo-desc">Change this text to describe what your second repository does. Keep it concise and clean.</p>
+                </div>
+                <div class="repo-meta">
+                    <span class="lang-dot lang-html"></span>
+                    <span>HTML / CSS</span>
+                </div>
+            </a>
+
+            <!-- REPOSITORY BOX 3 -->
+            <a href="https://github.com/WavierPigeon261/YOUR-REPOS-NAME" target="_blank" class="repo-card">
+                <div>
+                    <h3 class="repo-title">Project Three</h3>
+                    <p class="repo-desc">Change this text to describe your third repository. The grid will automatically align perfectly.</p>
+                </div>
+                <div class="repo-meta">
+                    <span class="lang-dot lang-js"></span>
+                    <span>JavaScript</span>
+                </div>
+            </a>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Sourabh. Built with clean HTML & CSS.</p>
+    </footer>
+
+</body>
+</html>
