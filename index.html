@@ -49,12 +49,31 @@
             max-width: 1000px;
             padding: 20px;
             box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
         }
 
-        .repo-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        .section-heading {
+            text-align: center;
+            color: #ffffff;
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .section-heading.tools-heading {
+            margin-top: 40px;
+        }
+
+        /* Responsive rows that center elements automatically */
+        .section-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 20px;
+            width: 100%;
         }
 
         .repo-card {
@@ -68,6 +87,17 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            /* Ensures items scale correctly but wrap naturally */
+            flex: 1 1 calc(33.333% - 20px);
+            min-width: 280px;
+            max-width: 320px;
+            box-sizing: border-box;
+        }
+
+        /* Special rule for the website row so they don't stretch too wide */
+        .website-row .repo-card {
+            flex: 1 1 calc(50% - 20px);
+            max-width: 320px;
         }
 
         .repo-card:hover {
@@ -109,37 +139,52 @@
         .lang-html { background-color: #e34c26; }
         .lang-js { background-color: #f1e05a; }
 
+        .live-tag {
+            font-style: italic;
+            font-weight: 500;
+            color: #58a6ff;
+            opacity: 0.8;
+        }
+
         footer {
             margin-top: auto;
             padding: 40px 20px;
             font-size: 0.85rem;
             color: var(--text-muted);
+            text-align: center;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Sourabh Shet</h1>
-        <p>Student, developer.</p>
+        <h1><b>Sourabh Shet</b></h1>
+        <p>Student, Developer</p>
     </header>
 
     <div class="container">
-        <div class="repo-grid">
+        
+        <h2 class="section-heading"><b>My Repositories</b></h2>
 
-            <!-- REPOSITORY BOX 1 -->
+        <div class="section-row">
+
             <a href="https://github.com/WavierPigeon261/spectre-search" target="_blank" class="repo-card">
                 <div>
                     <h3 class="repo-title">Spectre Search</h3>
                     <p class="repo-desc">A privacy-focused search aggregation and synthesis engine utilizing low-latency AI inference models.</p>
                 </div>
-                <div class="repo-meta">
-                    <span class="lang-dot lang-python"></span>
-                    <span>Python</span>
+                <div class="repo-meta" style="gap: 12px;">
+                    <div style="display: flex; align-items: center;">
+                        <span class="lang-dot lang-python"></span>
+                        <span>Python</span>
+                    </div>
+                    <div style="display: flex; align-items: center;">
+                        <span class="lang-dot lang-html"></span>
+                        <span>HTML</span>
+                    </div>
                 </div>
             </a>
 
-            <!-- REPOSITORY BOX 2 -->
             <a href="https://github.com/WavierPigeon261/spectre-browser" target="_blank" class="repo-card">
                 <div>
                     <h3 class="repo-title">Spectre Browser</h3>
@@ -151,7 +196,6 @@
                 </div>
             </a>
 
-            <!-- REPOSITORY BOX 3 -->
             <a href="https://github.com/WavierPigeon261/bettaAI" target="_blank" class="repo-card">
                 <div>
                     <h3 class="repo-title">Betta AI</h3>
@@ -164,10 +208,37 @@
             </a>
 
         </div>
+
+        <h2 class="section-heading tools-heading"><b>My Tools</b></h2>
+
+        <div class="section-row website-row">
+
+            <a href="https://spectre-search.onrender.com" target="_blank" class="repo-card">
+                <div>
+                    <h3 class="repo-title">Spectre Search</h3>
+                    <p class="repo-desc">Search without being searched... A search engine, that has zero tracking.</p>
+                </div>
+                <div class="repo-meta">
+                    <span class="live-tag">Search Engine</span>
+                </div>
+            </a>
+
+            <a href="https://wavierpigeon261.github.io/spectre-browser" target="_blank" class="repo-card">
+                <div>
+                    <h3 class="repo-title">Spectre Browser</h3>
+                    <p class="repo-desc">Spectre Browser website.</p>
+                </div>
+                <div class="repo-meta">
+                    <span class="live-tag">Browser Website</span>
+                </div>
+            </a>
+
+        </div>
+
     </div>
 
     <footer>
-        <p>&copy; 2026 Sourabh Shet. Built with my own coding knowledge..</p>
+        <p>&copy; 2026 Sourabh Shet. Built with my own knowledge.</p>
     </footer>
 
 </body>
